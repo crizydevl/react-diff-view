@@ -1,14 +1,20 @@
 {
   "name": "react-code-editor",
-  "private": true,
   "version": "1.0.0",
   "type": "module",
   "description": "基于monaco-editor的代码编辑/对比器 ",
-  "keywords": ["react", "monaco-editor", "typescript"],
+  "keywords": [
+    "react",
+    "monaco-editor",
+    "typescript"
+  ],
   "author": "crizydevl",
   "repository": {
     "type": "git",
-    "url": "https://github.com/crizydevl/react-diff-view.git"
+    "url": "git+https://github.com/crizydevl/react-diff-view.git"
+  },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/"
   },
   "scripts": {
     "dev": "vite",
@@ -38,7 +44,9 @@
     "vite": "^5.4.8",
     "vite-plugin-monaco-editor": "^1.1.0"
   },
-  "files": ["dist"],
+  "files": [
+    "dist"
+  ],
   "module": "./dist/index.es.js",
   "exports": {
     ".": {
