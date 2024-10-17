@@ -7,6 +7,7 @@ import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 import { resolve } from 'path'
 import monacoEditorPlugin, { IMonacoEditorOpts } from 'vite-plugin-monaco-editor';
+import dts from 'vite-plugin-dts'
 
 function loadMonacoEditorPlugin(options: IMonacoEditorOpts) {
   return (monacoEditorPlugin as any)['default'](options)
@@ -14,8 +15,9 @@ function loadMonacoEditorPlugin(options: IMonacoEditorOpts) {
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [react(), loadMonacoEditorPlugin({})],
+  plugins: [react(), loadMonacoEditorPlugin({}), dts({ tsconfigPath: './tsconfig.app.json' })],
   build: {
+    outDir: 'lib',
     lib: {
       name: 'react-code-editor',
       entry: resolve(__dirname, 'src/index.ts'),
@@ -23,8 +25,13 @@ export default defineConfig({
       formats: ['es']
     },
     rollupOptions: {
+      external: ['react'],
       output: {
         format: 'esm',
+        globals: {
+          react: 'React',
+          'react-dom': 'ReactDOM'
+        },
         inlineDynamicImports: false,
         manualChunks: (id: string) => {
           if (id.includes('node_modules')) {
