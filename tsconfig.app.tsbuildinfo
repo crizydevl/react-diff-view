@@ -1,1 +1,1 @@
-{"root":["./src/app.tsx","./src/index.ts","./src/main.tsx","./src/vite-env.d.ts"],"version":"5.6.3"}
+{"root":["./src/app.tsx","./src/index.ts","./src/main.tsx","./src/vite-env.d.ts","./src/diffcodeeditor/index.tsx","./src/data/index.ts","./src/data/newvlaue.ts","./src/data/oldvalue.ts"],"version":"5.6.3"}

@@ -1,12 +1,19 @@
+/*
+ * @Description: 
+ * @Author: lqx
+ * @Date: 2024-10-17 10:10:14
+ */
 
-import JsonViewer from './JsonViwer'
+import { DiffCodeEditor } from '.'
+import { newValue, oldValue } from './data'
+
 import './App.css'
 
 
 function App() {
   return (
     <div>
-      <JsonViewer />
+      <DiffCodeEditor newValue={newValue} oldValue={oldValue} />
     </div>
   )
 }
