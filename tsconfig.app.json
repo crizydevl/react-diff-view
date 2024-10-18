@@ -18,7 +18,13 @@
     "strict": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
-    "noFallthroughCasesInSwitch": true
+    "noFallthroughCasesInSwitch": true,
+
+    /* 只输出声明文件 */
+    "emitDeclarationOnly": true,
+    /* 自动生成声明文件 */
+    "declaration": true,
+    "declarationDir": "lib"
   },
   "include": ["src"]
 }
