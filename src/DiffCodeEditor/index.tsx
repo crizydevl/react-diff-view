@@ -11,14 +11,12 @@ export interface DiffCodeEditorProps {
   newValue: string
   language?: string
   height?: number
-  width?: number
   options?: monaco.editor.IStandaloneDiffEditorConstructionOptions
 }
 
 export default function DiffCodeEditor({
   oldValue,
   newValue,
-  width,
   height = 400,
   language = 'json',
   options
