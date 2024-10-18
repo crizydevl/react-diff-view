@@ -11,19 +11,22 @@ export interface DiffCodeEditorProps {
   newValue: string
   language?: string
   height?: number
+  width?: number
+  options?: monaco.editor.IStandaloneDiffEditorConstructionOptions
 }
 
 export default function DiffCodeEditor({
   oldValue,
   newValue,
+  width,
   height = 400,
-  language = 'json'
+  language = 'json',
+  options
 }: DiffCodeEditorProps) {
   const diffEditorRef = useRef<HTMLDivElement>(null)
   const diffCodeEditor = useRef<monaco.editor.IStandaloneDiffEditor>()
 
   useEffect(() => {
-    console.log('init ', monaco);
     if (diffEditorRef.current) {
       diffCodeEditor.current = createMonacoEditor(diffEditorRef.current);
     }
@@ -46,7 +49,9 @@ export default function DiffCodeEditor({
   function createMonacoEditor(dom: HTMLDivElement) {
     
     const diffEditor = monaco.editor.createDiffEditor(dom, {
-      readOnly: true
+      ...options,
+      readOnly: true,
+      automaticLayout: true
     })
 
     return diffEditor

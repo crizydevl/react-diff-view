@@ -13,7 +13,7 @@ import './App.css'
 function App() {
   return (
     <div>
-      <DiffCodeEditor newValue={newValue} oldValue={oldValue} />
+      <DiffCodeEditor newValue={newValue} oldValue={oldValue} width={800} />
     </div>
   )
 }

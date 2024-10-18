@@ -47,10 +47,5 @@
     "lib"
   ],
   "module": "./lib/index.es.js",
-  "types": "./lib/index.d.ts",
-  "exports": {
-    ".": {
-      "import": "./lib/index.es.js"
-    }
-  }
+  "types": "./lib/index.d.ts"
 }
